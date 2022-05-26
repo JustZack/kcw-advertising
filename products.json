@@ -1,37 +1,114 @@
 [
     {
-        "name" : "A Product",
-        "image" : "",
-        "link" : "",
-        "type" : "",
-        "art"  : "kcw star"
+        "name" : "Working Mans Class",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "working-mans-class"
     },
     {
-        "name" : "A Product",
-        "image" : "",
-        "link" : "",
-        "type" : "",
-        "art"  : "kcw star"
+        "name" : "KCW Star",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "kcw-star"
     },
     {
-        "name" : "A Product",
-        "image" : "",
-        "link" : "",
-        "type" : "",
-        "art"  : "kcw star"
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
     },
     {
-        "name" : "A Product",
-        "image" : "",
-        "link" : "",
-        "type" : "",
-        "art"  : "kcw star"
+        "name" : "Stock Bug Racing",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "stock-bug"
     },
     {
-        "name" : "A Product",
-        "image" : "",
-        "link" : "",
-        "type" : "",
-        "art"  : "kcw star"
+        "name" : "Classic KCW Star Shirt",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "shirt",
+        "art"  : "classic-kcw-star"
+    },
+    {
+        "name" : "KCW Barndoors Shirt",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "shirt",
+        "art"  : "classic-kcw-star"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Stock Bug Racing",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "stock-bug"
+    },
+    {
+        "name" : "Classic KCW Star Shirt",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "shirt",
+        "art"  : "classic-kcw-star"
+    },
+    {
+        "name" : "KCW Barndoors Shirt",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "shirt",
+        "art"  : "classic-kcw-star"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
+    },
+    {
+        "name" : "Original Bug Logo",
+        "image" : "https://vangogh.teespring.com/v3/image/PD1OGlY-1KRgoLhE2n7HbmI4OFY/800/800.jpg",
+        "link" : "https://kcwmerch.creator-spring.com/listing/kcw-barndoor?product=2",
+        "type" : "sticker",
+        "art"  : "bug-logo"
     }
 ]

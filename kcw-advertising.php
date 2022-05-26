@@ -2,25 +2,29 @@
 /*
 * Plugin Name:       KCW Advertising
 * Description:       Provides KCW Advertising for Merch (and maybe more)
-* Version:           0.0.1
+* Version:           0.2.3
 * Requires at least: 5.2
 * Requires PHP:      7.2
 * Author:            Zack Jones
 */
 
 function  kcw_advertising_register_dependencies() {
-    wp_register_style("kcw-advertising", plugins_url("kcw-advertising.css", __FILE__), null, "0.0.1");
-    wp_register_script("kcw-advertising", plugins_url("kcw-advertising.js", __FILE__), array('jquery'), "0.0.1");
+    wp_register_style("kcw-advertising", plugins_url("kcw-advertising.css", __FILE__), null, "0.2.2");
+    wp_register_script("kcw-advertising", plugins_url("kcw-advertising.js", __FILE__), array('jquery'), "0.2.2");
+    wp_register_script("jquery-transit", plugins_url("jquery.transit.min.js", __FILE__), array('jquery'));
+    wp_register_script("velocity", "https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.min.js", array('jquery'));
 }
-add_action("wp_enqueue_scripts", "kcw_gallery_register_dependencies");
+add_action("wp_enqueue_scripts", "kcw_advertising_register_dependencies");
 
 function kcw_advertising_enqueue_dependencies() {
     wp_enqueue_style("kcw-advertising");
     wp_enqueue_script("kcw-advertising");
+    wp_enqueue_script("jquery-transit");
+    wp_enqueue_script("velocity");
 }
 
 //Create random & suitable a set of merch images to ensure a fresh advertisment everytime
-function kcw_advertising_merch_create_product_set() {
+function kcw_advertising_merch_create_product_set($count) {
     /*
         Thoughts:
             0. Read in a list of available products
@@ -28,7 +32,10 @@ function kcw_advertising_merch_create_product_set() {
             2. Create a set of products based on the guideline
             3. Shuffle the images 
     */
-    return json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "products.json"), true);
+    $products = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "products.json"), true);
+    shuffle($products);
+    $products = array_slice($products, 0, $count);
+    return $products;
 }
 
 function kcw_advertising_merch_create_product_card($product) {
@@ -39,11 +46,9 @@ function kcw_advertising_merch_create_product_card($product) {
         <a href='$link'>
             <div class='kcw-advertising-merch-card-wrapper'>
                 <div class='kcw-advertising-merch-card-image'>
-                    <img src='$image'>
+                    <img src='$image' draggable='false'>
                 </div>
-                <div class='kcw-advertising-merch-card-title'>
-                    <p>$name</p>
-                </div>
+                <p class='kcw-advertising-merch-card-title'>$name</p>
             </div>
         </a>
     </li>";
@@ -59,13 +64,18 @@ function kcw_advertising_merch_banner_html($products) {
     
     return "<div class='kcw-advertising-merch-wrapper'>
         <div class='kcw-advertising-merch-cards-wrapper'>
-            <ul>
-                $product_html
-            </ul>
+            <center>
+                <h1 class='kcw-advertising-merch-heading'>
+                    Check out our merch store!
+                </h1>
+                <ul>
+                    $product_html
+                </ul>
+            </center>
         </div>
         <div class='kcw-advertising-merch-subline-wrapper'>
-            <div clas='kcw-advertising-merch-subline'>
-                <em>Our merch is printed & shipped by Teespring AKA Spring. <a href='https://www.spri.ng/#howitworks'>Learn more</a></em>
+            <div class='kcw-advertising-merch-subline'>
+                <center><em>Our merch is printed & shipped by Teespring. <a href='https://www.spri.ng/#howitworks'>Learn more</a></em></center>
             </div>
         </div>
     </div>";
@@ -76,16 +86,17 @@ function kcw_advertising_js_data($data) {
     return `<script>var kcw_advertising_data = $data</script>`;
 }
 
-function kcw_advertising_merch_init() {
+function kcw_advertising_merch_init($args) {
+    $count = $args["count"];
     //Enqueue style and script
     kcw_advertising_enqueue_dependencies();
 
     //Merch product set
-    $products = kcw_advertising_merch_create_product_set();
+    $products = kcw_advertising_merch_create_product_set($count);
     //Merch advertisment html
     $html = kcw_advertising_merch_banner_html($products);
 
-    echo $html;
+    return $html;
 }
 
 add_shortcode("kcw-advertising-merch", 'kcw_advertising_merch_init');
