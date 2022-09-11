@@ -2,17 +2,16 @@
 /*
 * Plugin Name:       KCW Advertising
 * Description:       Provides KCW Advertising for Merch (and maybe more)
-* Version:           0.2.3
+* Version:           0.2.96
 * Requires at least: 5.2
 * Requires PHP:      7.2
 * Author:            Zack Jones
 */
 
 function  kcw_advertising_register_dependencies() {
-    wp_register_style("kcw-advertising", plugins_url("kcw-advertising.css", __FILE__), null, "0.2.2");
-    wp_register_script("kcw-advertising", plugins_url("kcw-advertising.js", __FILE__), array('jquery'), "0.2.2");
+    wp_register_style("kcw-advertising", plugins_url("kcw-advertising.css", __FILE__), null, "0.2.95");
+    wp_register_script("kcw-advertising", plugins_url("kcw-advertising.js", __FILE__), array('jquery'), "0.2.3");
     wp_register_script("jquery-transit", plugins_url("jquery.transit.min.js", __FILE__), array('jquery'));
-    wp_register_script("velocity", "https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.min.js", array('jquery'));
 }
 add_action("wp_enqueue_scripts", "kcw_advertising_register_dependencies");
 
@@ -20,7 +19,6 @@ function kcw_advertising_enqueue_dependencies() {
     wp_enqueue_style("kcw-advertising");
     wp_enqueue_script("kcw-advertising");
     wp_enqueue_script("jquery-transit");
-    wp_enqueue_script("velocity");
 }
 
 //Create random & suitable a set of merch images to ensure a fresh advertisment everytime
@@ -32,6 +30,8 @@ function kcw_advertising_merch_create_product_set($count) {
             2. Create a set of products based on the guideline
             3. Shuffle the images 
     */
+    
+    //Current process is fully random
     $products = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "products.json"), true);
     shuffle($products);
     $products = array_slice($products, 0, $count);
@@ -63,14 +63,17 @@ function kcw_advertising_merch_banner_html($products) {
     }
     
     return "<div class='kcw-advertising-merch-wrapper'>
-        <div class='kcw-advertising-merch-cards-wrapper'>
+    <div class='kcw-advertising-merch-cards-wrapper'>
             <center>
-                <h1 class='kcw-advertising-merch-heading'>
-                    Check out our merch store!
-                </h1>
                 <ul>
                     $product_html
                 </ul>
+                <a class='kcw-advertising-merch-heading-link' href='https://merch.kustomcoachwerks.com/'>
+                    <h1 class='kcw-advertising-merch-heading fusion-button-text'>
+                        Check out our merch store
+                        <i class='fa fa-shopping-cart' aria-hidden='true'></i>
+                    </h1>
+                </a>
             </center>
         </div>
         <div class='kcw-advertising-merch-subline-wrapper'>

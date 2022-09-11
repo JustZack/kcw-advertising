@@ -3,19 +3,13 @@ div.kcw-advertising-merch-wrapper {
     margin: 0;
     padding: 0;
     position: relative;
-    height: 200px;
+    height: 230px;
 }
 
 div.kcw-advertising-merch-cards-wrapper {
     width: 100%;
     overflow: hidden;
-    user-drag: none;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    height: 175px;
+    height: 205px;
 }
 
 div.kcw-advertising-merch-cards-wrapper ul {
@@ -48,10 +42,18 @@ div.kcw-advertising-merch-cards-wrapper ul li div.kcw-advertising-merch-card-ima
     height: 100px;    
 }
 
+div.kcw-advertising-merch-cards-wrapper ul li * {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */   
+}
+
 div.kcw-advertising-merch-cards-wrapper ul li div.kcw-advertising-merch-card-image img {
     width: 150px;
     height: 100px;
-    object-fit: cover;
+    object-fit: cover;  
+    image-rendering: pixelated;
 }
 
 div.kcw-advertising-merch-cards-wrapper ul li p.kcw-advertising-merch-card-title {
@@ -59,7 +61,7 @@ div.kcw-advertising-merch-cards-wrapper ul li p.kcw-advertising-merch-card-title
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 16px;
-    margin-top: 6px;
+    font-family: "PT Sans";
 }
 div.kcw-advertising-merch-subline-wrapper {
     margin-top: 6px;
@@ -73,10 +75,24 @@ div.kcw-advertising-merch-subline-wrapper a {
 }
 
 h1.kcw-advertising-merch-heading {
-    margin: 0px 0px 6px 0px;
+    font-size: 18px;
+    margin: 8px 0px;
+    border-radius: 6px;
+    background-color: #aa4040;
     color: white;
-    font-size: 22px;
+    border: solid white 5px;
+    padding: 10px 12px 10px 12px;
     font-weight: bold;
-    font-family: "PT Sans";
     text-transform: uppercase;
+    font-family: "PT Sans";
+}
+h1.kcw-advertising-merch-heading:hover {
+    background-color: white;
+    color: #aa4040;
+}
+
+a.kcw-advertising-merch-heading-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-left: -16px;
 }
